@@ -1,0 +1,15 @@
+# API Keys and sensitive data
+
+# Node modules (if using npm/yarn later)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log

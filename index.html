@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Arena - Live Quiz Battle powered by AI and real-time leaderboards">
+    <meta name="keywords" content="quiz, trivia, AI, game, leaderboard">
+    <meta name="author" content="AI Arena">
+    <title>🔥 AI Arena – Live Quiz Battle</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Antigravity: Secure Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://*.cloudfunctions.net; img-src 'self' data:;">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Left: Game Area -->
+        <div class="card">
+            <h1>⚡ AI ARENA ⚡</h1>
+            <div class="question-area" id="gameArea" role="main" aria-labelledby="game-title">
+                <h2 id="game-title" class="sr-only">Quiz Game</h2>
+                <div class="question-text" id="questionText" aria-live="polite">Loading question from AI...</div>
+                <div class="options" id="optionsContainer" role="radiogroup" aria-labelledby="questionText"></div>
+                <button class="next-btn" id="nextBtn" disabled aria-describedby="next-description">▶ Next Question</button>
+                <div id="next-description" class="sr-only">Load the next question</div>
+                <div class="score-display" id="scoreDisplay" aria-live="polite">Score: 0</div>
+            </div>
+            <div class="form-group">
+                <label for="playerName" class="sr-only">Your name for leaderboard</label>
+                <input type="text" id="playerName" placeholder="Your name for leaderboard" aria-describedby="name-description">
+                <div id="name-description" class="sr-only">Enter your name to save your score</div>
+                <button id="submitScoreBtn" aria-describedby="submit-description">🏆 Submit My Score</button>
+                <div id="submit-description" class="sr-only">Save your current score to the leaderboard</div>
+            </div>
+        </div>
+
+        <!-- Right: Leaderboard -->
+        <div class="card">
+            <h2>🏆 TOP PLAYERS</h2>
+            <div class="leaderboard" role="region" aria-labelledby="leaderboard-title">
+                <h3 id="leaderboard-title" class="sr-only">Leaderboard</h3>
+                <div id="scoreList">
+                    <div class="loading">Loading leaderboard...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
